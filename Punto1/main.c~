@@ -1,0 +1,38 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <math.h>
+#include "runge-kutta.h" //Metodo de Runge-Kutta de cuarto orden
+
+#define G 39.486 //Unidades¿?
+
+
+
+int main(int argc, char **argv){
+
+  /*Posiciones de todos los astros*/
+  float **r; 
+  /*Velocidades de todos los astros*/
+  float **v;
+  /*Aceleraciones de todos los astros*/
+  float **a;
+  /*Masas de tod0s los astros*/
+  float *m;
+
+  /*timesstep variables--¿?*/
+  float dt = 0.001; //lo defino yo¿?
+  int n_steps = (int)(100.0/dt); //De dond sale esto¿?
+  int n_cuerpos = 4;
+  int n_coordenadas = 3;
+  int i,j;
+
+  /*asignacion de memoria*/
+  r = get_memory2(n_cuerpos, n_coordenadas);
+  v = get_memory2(n_cuerpos, n_coordenadas);
+  a = get_memory2(n_cuerpos, n_coordenadas);
+  m = get_memory(n_cuerpos);
+
+  /*Condiciones iniciales*/
+
+
+return 0
+}
