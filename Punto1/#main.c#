@@ -45,7 +45,7 @@ int main(int argc, char **argv){
   /*Condiciones iniciales*/
   //Cargar datos del archivo ic.txt
   FILE *file;
-  fopen(file, 'ic.txt');
+  file = fopen('ic.tzt', 'wr');
 
 
   /*Integracion Runge-Kutta cuarto orden*/
