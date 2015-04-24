@@ -3,6 +3,7 @@
 #include <math.h>
 #include "functions.h" //Funciones para integrar
 #include "runge-kutta.h" //Metodo de Runge-Kutta de cuarto orden
+#include "shellscrip.h" // Para leer el archivo tidy de forma mas sencilla
 
 /*Constantes*/
 #define G 39.486 //Unidades¿?
@@ -43,10 +44,39 @@ int main(int argc, char **argv){
   t = get_memory(n_steps);
 
   /*Condiciones iniciales*/
+  //INCONCLUSO
+  /*
   //Cargar datos del archivo ic.txt
-  FILE *file;
-  fopen(file, 'ic.txt');
+  float a;
+  FILE *readfile;
+  readfile = fopen('icb.tzt', 'wr');
+  fscanf(readfile,%d, &a)
 
+  fclose(readfile);
+  */
+
+  /*Condiciones iniciales a mano*/
+  //Pongo todo en 0
+  for (i=0;i<n_cuerpos;i++){
+    for(j=0;j<n_coordenadas;j++){
+      r[i][0][j] = 0.0;
+      v[i][0][j] = 0.0;
+    }
+  }
+  //Cambio las diferentes de 0
+  r[0][0][0] = 1.0;
+  r[2][0][0] = 1.0026;
+  r[3][0][0] = 1.0;
+  r[3][0][1] = 0.0963;
+  v[0][0][1] = 30;
+  v[2][0][1] = 1.023;
+  v[3][0][0] = 1570;
+  v[3][0][2] = 29959;
+
+  m[1] = 1;
+  m[0] = 3.003*(pow(10,-6));
+  m[2] = 3.695*(pow(10,-8));
+  m[3] = 5*(pow(10,-11));
 
   /*Integracion Runge-Kutta cuarto orden*/
   for(i=0;i<n_steps;i++){
@@ -77,7 +107,7 @@ int main(int argc, char **argv){
 /*----------------------------------------------Funciones-------------------------------------------------------*/
 
 /*Hallar Aceleracion*/
-void hallar_aceleracion(float **r, float **a, float *m, int n_cuerpos, int step, int n_coordenadas){
+void hallar_aceleracion(float ***r, float ***a, float *m, int n_cuerpos, int step, int n_coordenadas){
 
   int i,j,k;
   float r_ij;

@@ -1,0 +1,24 @@
+grep 'tierra' ic.txt | grep 'x' | awk {'print $3'} > icb.txt 
+grep 'tierra' ic.txt| grep 'y' | awk {'print $3'} >> icb.txt
+grep 'tierra' ic.txt| grep 'z' | awk {'print $3'} >> icb.txt
+grep 'tierra' ic.txt| grep 'x' | awk {'print $4'} >> icb.txt
+grep 'tierra' ic.txt| grep 'y' | awk {'print $4'} >> icb.txt
+grep 'tierra' ic.txt| grep 'z' | awk {'print $4'} >> icb.txt
+grep 'sol' ic.txt| grep 'x' | awk {'print $3'} >> icb.txt
+grep 'sol' ic.txt| grep 'y' | awk {'print $3'} >> icb.txt
+grep 'sol' ic.txt| grep 'z' | awk {'print $3'} >> icb.txt
+grep 'sol' ic.txt| grep 'x' | awk {'print $4'} >> icb.txt
+grep 'sol' ic.txt| grep 'y' | awk {'print $4'} >> icb.txt
+grep 'sol' ic.txt| grep 'z' | awk {'print $4'} >> icb.txt
+grep 'luna' ic.txt| grep 'x' | awk {'print $3'} >> icb.txt
+grep 'luna' ic.txt| grep 'y' | awk {'print $3'} >> icb.txt
+grep 'luna' ic.txt| grep 'z' | awk {'print $3'} >> icb.txt
+grep 'luna' ic.txt| grep 'x' | awk {'print $4'} >> icb.txt
+grep 'luna' ic.txt| grep 'y' | awk {'print $4'} >> icb.txt
+grep 'luna' ic.txt| grep 'z' | awk {'print $4'} >> icb.txt
+grep 'asteroide' ic.txt| grep 'x' | awk {'print $3'} >> icb.txt
+grep 'asteroide' ic.txt| grep 'y' | awk {'print $3'} >> icb.txt
+grep 'asteroide' ic.txt| grep 'z' | awk {'print $3'} >> icb.txt
+grep 'asteroide' ic.txt| grep 'x' | awk {'print $4'} >> icb.txt
+grep 'asteroide' ic.txt| grep 'y' | awk {'print $4'} >> icb.txt
+grep 'asteroide' ic.txt| grep 'z' | awk {'print $4'} >> icb.txt
