@@ -10,10 +10,14 @@ float r_prime(float r, float v, float a){
   return v;
 }
 /*v prima*/
-float v_prime(float ***r, float ***v, float ***a, int cuerpo, int step, int coordenada){
-
-  return ;
+float v_prime(float r, float v, float a){
+  return a;
 }
+
+
+
+
+
 //==========================================
 /*Hallar Aceleracion*/
 void hallar_aceleracion(float ***r, float ***a, float *m, int n_cuerpos, int step, int n_coordenadas){
