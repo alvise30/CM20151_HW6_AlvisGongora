@@ -1,23 +1,20 @@
 #include <stdio.h>
 #include <math.h>
-#include "functions.h"
+#include "functions.o"
 
 int rungekutta_step(int cuerpo, int step, int coordenada, float ***r, float ***v, float ***a, float *t, float h){
 
-a = a[cuerpo][step-1][coordenada]
-  float kr1 = fun_r(dt, r[cuerpo][step-1][coordenada], v[cuerpo][step-1][coordenada]);
-  float kv1 = fun_v(dt, v[cuerpo][step-1][coordenada], a);
-  float ka1 = hallar_aceleracion(r, a, m, n_cuerpos, step, n_coordenadas);
-
+  a = a[cuerpo][step-1][coordenada];
+  float kr1[coordenada] = r_prime(r, v, a, cuerpo, (step-1), coordenada);
+  float kv1[coordenada] = fun_v(dt, v[cuerpo][step-1][coordenada], a);
+  
   // first step
-  float t1 = t[step-1] + (h/2.0);
-  float r1 = r[cuerpo][step-1][coordenada] + (h/2.0) * kr1;
-  float v1 = v[cuerpo][step-1][coordenada] + (h/2.0) * kv1;
-  float a1 = v[cuerpo][step-1][coordenada] + (h/2.0) * ka1;
-
-  float kr2 = fun_r(dt, r1, v1);
-  float kv2 = fun_v(dt, v1, a1);
-  float ka2 = hallar_aceleracion(r, a, m, n_cuerpos, step, n_coordenadas);
+  float t1[coordenada] = t[step-1] + (h/2.0);
+  float r1[coordenada] = r[cuerpo][step-1][coordenada] + (h/2.0) * kr1;
+  float v1[coordenada] = v[cuerpo][step-1][coordenada] + (h/2.0) * kv1;
+  
+  float kr2[coordenada] = fun_r(dt, r1, v1);
+  float kv2[coordenada] = fun_v(dt, v1, a1);
 
   // second step
   float t2 = t[step-1] + (h/2.0);
